@@ -5,6 +5,7 @@ import os
 import unittest
 
 import homeassistant.scripts.check_config as check_config
+from homeassistant.loader import set_component
 from tests.common import patch_yaml_files, get_test_config_dir
 
 _LOGGER = logging.getLogger(__name__)
@@ -124,6 +125,9 @@ class TestCheckConfig(unittest.TestCase):
 
     def test_component_platform_not_found(self):
         """Test errors if component or platform not found."""
+        # Make sure they don't exist
+        set_component('beer', None)
+        set_component('light.beer', None)
         files = {
             'badcomponent.yaml': BASE_CONFIG + 'beer:',
             'badplatform.yaml': BASE_CONFIG + 'light:\n  platform: beer',
