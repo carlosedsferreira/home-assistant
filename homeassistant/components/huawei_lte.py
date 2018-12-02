@@ -48,6 +48,7 @@ class RouterData:
     device_information = attr.ib(init=False, factory=dict)
     device_signal = attr.ib(init=False, factory=dict)
     traffic_statistics = attr.ib(init=False, factory=dict)
+    month_statistics = attr.ib(init=False, factory=dict)
     wlan_host_list = attr.ib(init=False, factory=dict)
 
     def __getitem__(self, path: str):
@@ -74,6 +75,8 @@ class RouterData:
         _LOGGER.debug("device_signal=%s", self.device_signal)
         self.traffic_statistics = self.client.monitoring.traffic_statistics()
         _LOGGER.debug("traffic_statistics=%s", self.traffic_statistics)
+        self.month_statistics = self.client.monitoring.month_statistics()
+        _LOGGER.debug("month_statistics=%s", self.month_statistics)
         self.wlan_host_list = self.client.wlan.host_list()
         _LOGGER.debug("wlan_host_list=%s", self.wlan_host_list)
 
