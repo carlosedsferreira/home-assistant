@@ -839,7 +839,7 @@ pyW800rf32==0.1
 # py_noaa==0.3.0
 
 # homeassistant.components.ads
-pyads==2.2.6
+pyads==3.1.2
 
 # homeassistant.components.sensor.airvisual
 pyairvisual==2.0.1
