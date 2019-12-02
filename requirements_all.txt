@@ -462,7 +462,7 @@ ha-ffmpeg==1.9
 ha-philipsjs==0.0.5
 
 # homeassistant.components.habitica
-habitipy==0.2.0
+habitipy==0.3.0
 
 # homeassistant.components.hangouts
 hangups==0.4.6
